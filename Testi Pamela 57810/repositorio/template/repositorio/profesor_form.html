@@ -1,0 +1,13 @@
+{% extends 'repositorio/index.html' %}
+
+{% block contenido %}
+    <h1>Crear Docente</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ profesor_form.as_p }}
+        {{ curso_profesor_form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+{% endblock contenido%}
+

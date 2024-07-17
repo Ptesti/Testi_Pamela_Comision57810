@@ -1,0 +1,32 @@
+{% extends 'repositorio/index.html' %}
+
+{% block titulo %}
+    <h1>Materias</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre de las materias</th>
+            <th>Código</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for materia in materias %}
+    <tr>
+        <td>{{ materia.id}}</td>
+        <td>{{ materia.nombre}}</td>
+        <td>{{ materia.codigo}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br><h2>Añadir Materia</h2>
+<form method="post">
+    <a href="{% url 'materia_create' %}" class="btn btn-primary">Crear</a>
+    {% csrf_token %}
+    {{ form.as_p }}
+</form>
+{% endblock contenido %}

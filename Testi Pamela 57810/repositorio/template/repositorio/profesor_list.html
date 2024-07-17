@@ -1,0 +1,41 @@
+{% extends 'repositorio/index.html' %}
+
+{% block contentido %}
+    <h1>Lista de Profesores</h1>
+    <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Cursos</th>
+                    <th>Materias</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for profesor in profesores %}
+                <tr>
+                    <td>{{ profesor.id }}</td>
+                    <td>{{ profesor.nombre }}</td>
+                    <td>{{ profesor.apellido }}</td>
+                    <td>{{ profesor.mail }}</td>
+                    <td>
+                        <ul>
+                        {% for curso in profesor.cursos %}
+                            <li>{{ curso.curso.nombre }} - {{ curso.curso.division }} ({{ curso.curso.get_turno_display }})</li>
+                        {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                        {% for materia in profesor.materias %}
+                            <li>{{ materia.materia.nombre }}</li>
+                        {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
