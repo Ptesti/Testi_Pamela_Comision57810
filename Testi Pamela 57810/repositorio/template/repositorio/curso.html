@@ -1,0 +1,32 @@
+{% extends 'repositorio/index.html' %}
+
+{% block titulo %}
+    <h1>Cursos</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Curso</th>
+            <th>División</th>
+            <th>Turno</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for curso in cursos %}
+    <tr>
+        <td>{{ curso.nombre }}</td>
+        <td>{{ curso.division }}</td>
+        <td>{{ curso.get_turno_display }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<h2>Añadir Curso</h2>
+<form method="post">
+    <a href="{% url 'curso_create' %}" class="btn btn-primary">Crear</a>
+    {% csrf_token %}
+    {{ form.as_p }}
+</form>
+{% endblock contenido %}

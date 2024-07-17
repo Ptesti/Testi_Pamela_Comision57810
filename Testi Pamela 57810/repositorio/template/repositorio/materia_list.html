@@ -5,23 +5,6 @@
     
     {% for materia in materias %}
         <h2>{{ materia.nombre }}</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for profesor in materia.profesor_set.all %}
-                <tr>
-                    <td>{{ profesor.nombre }}</td>
-                    <td>{{ profesor.apellido }}</td>
-                    <td>{{ profesor.mail }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <p>Código: {{ materia.codigo }}</p>
     {% endfor %}
 {% endblock %}

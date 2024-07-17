@@ -7,4 +7,17 @@
 
 {% block contenido %}
 <p align="center"> Podrás encontrar todos los recursos dispuestos para introducirnos en la lectura a través de los distintos libros y obras literarias.</p>
+{% if pdf_files %}
+        <h2>Lista de obras literarias</h2>
+        <p>Haciendo clic en el titulo del libro que desees se abrira el pdf</p>
+        <ul>
+            {% for pdf_file in pdf_files %}
+                <li>
+                    <a href="{% url 'pdf_viewer' pdf_file %}">{{ pdf_file }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron archivos PDF.</p>
+    {% endif %}
 {% endblock contenido %}

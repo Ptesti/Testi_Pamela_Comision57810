@@ -1,0 +1,9 @@
+{% extends 'repositorio/index.html' %}
+
+{% block contenido %}
+    <h1>Lista de Cursos</h1>
+    
+    {% for curso in cursos %}
+        <h2>{{ curso.nombre }} - {{ curso.division }} ({{ curso.get_turno_display }})</h2>
+    {% endfor %}
+{% endblock %}

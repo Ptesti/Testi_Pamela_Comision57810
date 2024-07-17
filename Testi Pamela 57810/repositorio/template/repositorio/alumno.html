@@ -2,8 +2,7 @@
 
 {% block titulo %}
     <h1>Datos de los alumnos</h1>
-{% endblock titulo %}
-    
+{% endblock titulo %}    
 
 {% block contenido %}
 <table class="table table-striped">
@@ -29,6 +28,5 @@
     <a href="{% url 'alumno_create' %}" class="btn btn-primary">Crear</a>
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
 {% endblock contenido %}

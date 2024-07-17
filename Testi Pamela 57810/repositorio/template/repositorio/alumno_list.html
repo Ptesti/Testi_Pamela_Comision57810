@@ -5,33 +5,17 @@
     <table>
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
-                <th>Cursos</th>
-                <th>Materias</th>
-                <th>Profesores</th>
             </tr>
         </thead>
         <tbody>
             {% for alumno in alumnos %}
             <tr>
+                <td>{{ alumno.id }}</td>
                 <td>{{ alumno.nombre }}</td>
                 <td>{{ alumno.apellido }}</td>
-                <td>
-                    {% for curso in alumno.cursos.all %}
-                        {{ curso.nombre }} - {{ curso.division }}<br>
-                    {% endfor %}
-                </td>
-                <td>
-                    {% for materia in alumno.materias.all %}
-                        {{ materia.nombre }}<br>
-                    {% endfor %}
-                </td>
-                <td>
-                    {% for profesor in alumno.profesores.all %}
-                        {{ profesor.nombre }} {{ profesor.apellido }}<br>
-                    {% endfor %}
-                </td>
             </tr>
             {% endfor %}
         </tbody>

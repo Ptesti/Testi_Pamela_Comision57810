@@ -2,7 +2,6 @@
 
 {% block contenido %}
     <h1>Crear Materia</h1>
-    
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
