@@ -1,0 +1,13 @@
+{% extends 'repositorio/index.html' %}
+
+{% block titulo %}
+    <h1>Buscar Docentes</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+<form action="{% url 'encontrarProf' %}" method="get">    
+    {% csrf_token %}
+    Ingrese el apellido del docente que desea buscar: <input type="text" name="buscar" id="buscar">
+    <button type="submit">Buscar</button>
+</form>
+{% endblock contenido %}

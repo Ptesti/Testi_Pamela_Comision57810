@@ -11,6 +11,7 @@
             <th>Id</th>
             <th>Nombre</th>
             <th>Apellido</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -19,13 +20,26 @@
         <td>{{ alumno.id}}</td>
         <td>{{ alumno.nombre}}</td>
         <td>{{ alumno.apellido}}</td>
-    </tr>
+        <td>
+            <a
+            href="{% url 'alumnoActualizar' alumno.id %}"
+            class="btn btn-primary"
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+            ><i class="fa-regular fa-pen-to-square" title="Editar"></i>
+            </a>
+            <a
+            href="{% url 'alumnoEliminar' alumno.id %}"
+            class="btn btn-danger"
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+            ><i class="fa-regular fa-trash-can" title="Eliminar"></i>
+            </a>                
+        </td>
     {% endfor %}
     </tbody>
 </table>
 <h2>Añadir Alumno</h2>
-<form method="post">
-    <a href="{% url 'alumno_create' %}" class="btn btn-primary">Crear</a>
+<form action="{% url 'alumno_list' %}" method="post">
+    <a href="{% url 'alumno_create' %}" class="btn btn-outline-primary btn-sm">Crear</a>
     {% csrf_token %}
     {{ form.as_p }}
 </form>

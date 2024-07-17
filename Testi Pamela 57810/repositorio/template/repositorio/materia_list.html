@@ -1,10 +1,23 @@
 {% extends 'repositorio/index.html' %}
 
-{% block content %}
+{% block contenido %}
     <h1>Lista de Materias</h1>
-    
-    {% for materia in materias %}
-        <h2>{{ materia.nombre }}</h2>
-        <p>Código: {{ materia.codigo }}</p>
-    {% endfor %}
-{% endblock %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Materia</th>
+                <th>Código</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for materia in materias %}
+            <tr>
+                <td>{{ materia.id }}</td>
+                <td>{{ materia.nombre }}</td>
+                <td>{{ materia.codigo }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}

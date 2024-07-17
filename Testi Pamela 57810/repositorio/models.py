@@ -32,8 +32,11 @@ class Materia(models.Model):
     nombre = models.CharField(max_length=100)
     codigo = models.CharField(max_length=10, unique=True)
 
+    class Meta:
+        ordering = ["nombre", "codigo"]
+
     def __str__(self):
-        return self.nombre
+        return f"{self.nombre}, {self.nombre.codigo}"
 
 # Modelo de Curso
 class Curso(models.Model):
@@ -47,5 +50,8 @@ class Curso(models.Model):
     division = models.CharField(max_length=10)
     turno = models.CharField(max_length=50, choices=TURNOS)
 
+    class Meta:
+        ordering = ["nombre", "division", "turno"]
+    
     def __str__(self):
         return f"{self.nombre} - {self.division} ({self.get_turno_display()})"

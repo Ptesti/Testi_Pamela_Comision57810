@@ -8,24 +8,41 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Curso</th>
             <th>División</th>
             <th>Turno</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-    {% for curso in cursos %}
+    {% for curso in cursos_list %}
     <tr>
+        <td>{{ curso.id }}</td>
         <td>{{ curso.nombre }}</td>
         <td>{{ curso.division }}</td>
         <td>{{ curso.get_turno_display }}</td>
+        <td>
+            <a
+            href="{% url 'cursosActualizar' curso.id %}"
+            class="btn btn-primary"
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+            ><i class="fa-regular fa-pen-to-square" title="Editar"></i>
+            </a>
+            <a
+            href="{% url 'cursosEliminar' curso.id %}"
+            class="btn btn-danger"
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+            ><i class="fa-regular fa-trash-can" title="Eliminar"></i>
+            </a>                
+        </td>
     </tr>
     {% endfor %}
     </tbody>
 </table>
 <h2>Añadir Curso</h2>
-<form method="post">
-    <a href="{% url 'curso_create' %}" class="btn btn-primary">Crear</a>
+<form action="{% url 'curso_list' %}" method="post">
+    <a href="{% url 'cursoCreate' %}" class="btn btn-outline-primary btn-sm">Crear</a>
     {% csrf_token %}
     {{ form.as_p }}
 </form>

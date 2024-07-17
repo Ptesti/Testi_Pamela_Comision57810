@@ -11,6 +11,7 @@
             <th>Id</th>
             <th>Nombre de las materias</th>
             <th>Código</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -19,13 +20,27 @@
         <td>{{ materia.id}}</td>
         <td>{{ materia.nombre}}</td>
         <td>{{ materia.codigo}}</td>
+        <td>
+            <a
+            href="{% url 'materiaActualizar' materia.id %}"
+            class="btn btn-primary"
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+            ><i class="fa-regular fa-pen-to-square" title="Editar"></i>
+            </a>
+            <a
+            href="{% url 'materiaEliminar' materia.id %}"
+            class="btn btn-danger"
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+            ><i class="fa-regular fa-trash-can" title="Eliminar"></i>
+            </a>                
+        </td>
     </tr>
     {% endfor %}
     </tbody>
 </table>
-<br><h2>Añadir Materia</h2>
-<form method="post">
-    <a href="{% url 'materia_create' %}" class="btn btn-primary">Crear</a>
+<h2>Añadir Materia</h2>
+<form action="{% url 'materia_list' %}" method="post">
+    <a href="{% url 'materia_create' %}" class="btn btn-outline-primary btn-sm">Crear</a>
     {% csrf_token %}
     {{ form.as_p }}
 </form>
