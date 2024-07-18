@@ -5,6 +5,9 @@
 {% endblock titulo %}
 
 {% block contenido %}
+<div class="mt-4">
+    <a href="{% url 'materia_create' %}" class="btn btn-outline-primary btn-sm">Agregar nuevo</a><br><br>
+</div>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -38,10 +41,4 @@
     {% endfor %}
     </tbody>
 </table>
-<h2>Añadir Materia</h2>
-<form action="{% url 'materia_list' %}" method="post">
-    <a href="{% url 'materia_create' %}" class="btn btn-outline-primary btn-sm">Crear</a>
-    {% csrf_token %}
-    {{ form.as_p }}
-</form>
 {% endblock contenido %}

@@ -5,6 +5,9 @@
 {% endblock titulo %}
 
 {% block contenido %}
+<div class="mt-4">
+    <a href="{% url 'curso_create' %}" class="btn btn-outline-primary btn-sm">Agregar nuevo</a><br><br>
+</div>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -16,7 +19,7 @@
         </tr>
     </thead>
     <tbody>
-    {% for curso in cursos_list %}
+    {% for curso in cursos %}
     <tr>
         <td>{{ curso.id }}</td>
         <td>{{ curso.nombre }}</td>
@@ -40,10 +43,4 @@
     {% endfor %}
     </tbody>
 </table>
-<h2>Añadir Curso</h2>
-<form action="{% url 'curso_list' %}" method="post">
-    <a href="{% url 'cursoCreate' %}" class="btn btn-outline-primary btn-sm">Crear</a>
-    {% csrf_token %}
-    {{ form.as_p }}
-</form>
 {% endblock contenido %}

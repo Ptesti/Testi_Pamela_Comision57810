@@ -55,3 +55,11 @@ class Curso(models.Model):
     
     def __str__(self):
         return f"{self.nombre} - {self.division} ({self.get_turno_display()})"
+
+# Modelo Contacto
+class Contacto(models.Model):
+    nombre = models.CharField(max_length=100)
+    email = models.EmailField()
+    mensaje = models.TextField()
+    fecha_envio = models.DateTimeField(auto_now_add=True)
+    
