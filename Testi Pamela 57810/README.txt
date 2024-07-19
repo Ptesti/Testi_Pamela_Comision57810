@@ -1,6 +1,6 @@
 "Biblioteca Digital"
 
-Consta de un proyecto para la consulta de libros en formato PDF por partes de los alumnos de la institución, y la carga de los mismos así como tambien documentación pertinente para los docentes.
+Consta de un proyecto para la consulta de libros en formato PDF.
 
 El proyecto surgió de ser parte de una escuela la cual no cuenta con biblioteca de forma física, y carece de material bibliográfico.
 Por tal motivo como primera instancia para poder brindar de forma rápida los recursos para los alumnos y/o docentes se me ocurrió realizar un Google Sites para ir dándole vida a esta biblioteca.
@@ -9,17 +9,33 @@ Con el venir del curso y armar un proyecto fue ahi donde pensé en convertir ese
 
 La pagina cuenta con siete enlaces internos:
 
-* Inicio: Es el inicio de nuestra página, ahí encontraremos una breve reseña de bienvenida y de que la página es totalmente responsive.
+* Inicio: Hay una breve reseña de bienvenida e información de la de que la página es totalmente responsive.
 
-* Materias: Aca encontramos una lista con todas las materias que hay en este colegio registrada en la base de datos.
+* Mundo literario: Aca encontramos una lista con todos los recursos dispuestos para introducirnos en la lectura a través de los distintos libros y obras literarias en formato PDF.
 
-* Mundo literario: Aca encontramos una lista con todos los recursos dispuestos para introducirnos en la lectura a través de los distintos libros y obras literarias.
-* Docentes: Aca encontramos la base de datos con el plantel docentes que hay en la institución, como así tambien, las materias que da, en que cursos y turno se encuentra, tambien se podrá realizar un a/b/m.
+* Materias: Acá se visualizan las materias que fueron cargadas. Podemos hacer un CRUD
+  Tienen la funciones de: crear una nueva materia, actualizar una materia, eliminar una materia.
 
-* Alumnos: Aca encontramos la base de datos con los alumnos que se hayan registrado a la biblioteca donde se reflejaran en que curso están y turno.
+* Docentes: Acá se visualizan los docentes que fueron cargados. Podemos hacer un CRUD
+Tienen la funciones de: crear una nuevo docente, actualizar un docente, eliminar un docente, buscar y encontrar.
 
-* Contacto: Aca nos llevara a un formulario para dejar comentarios.
+* Alumnos: Acá se visualizan los alumnos que fueron cargados. Podemos hacer un CRUD
+Tienen la funciones de: crear una nuevo alumno, actualizar un alumno, eliminar un alumno.
 
-* Acerca de: Este es un apartado donde cuenta un breve resumen de la escuela y cómo surgió este proyecto.
+* Cursos: Acá se visualizan los cursos que fueron cargados. Podemos hacer un CRUD
+Tienen la funciones de: crear una nuevo curso, actualizar un curso, eliminar un curso.
 
-En el pie de página encontrará un mapa con la ubicación de la escuela y la dirección escrita.
+* Acerca de mi: Este es un apartado donde cuenta un breve resumen de quien soy y de cómo surgió este proyecto.
+
+* Contacto: Acá nos llevará a un formulario para dejar comentarios, cuando no estemos logueados.
+
+*Loguin, Logout, Registración: Podremos ingresar un nuevo usuario, editarlo, loguearnos y cerrar la sesión cuenta con un avatar por defecto y tambien se puede cambiar dicho avatar.
+Cada usuario logueado tendrá beneficios que los que no lo estan, 
+usuarios registrados:
+	Nombre de usuario: Pamela 
+	Contraseña: Coder12345
+
+	Nombre de usuario: juan1234
+	Contraseña: jpjpjpjp
+
+En el footer encontrará un mapa con la ubicación de la escuela y la dirección escrita.

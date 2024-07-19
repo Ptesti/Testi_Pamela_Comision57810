@@ -1,8 +1,7 @@
 from django import forms
 from .models import *
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
-
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 class AlumnoForm(forms.ModelForm):
     class Meta:
@@ -39,3 +38,15 @@ class RegistroForm (UserCreationForm):
     class Meta:
         model = User
         fields = ["username", "first_name", "last_name", "email", "password1", "password2"]
+
+class UserEditForm (UserChangeForm):
+    email = forms.EmailField(required=True)
+    first_name = forms.CharField(label="Nombre", max_length=30, required=True)
+    last_name = forms.CharField(label="Apellido", max_length=30, required=True)
+    
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name", "email"]
+
+class AvatarForm (forms.Form):
+    imagen = forms.ImageField (required=True)

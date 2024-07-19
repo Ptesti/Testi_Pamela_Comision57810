@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Modelo de negocio de la aplicación.
 
 # Modelo de Alumno
@@ -62,4 +62,13 @@ class Contacto(models.Model):
     email = models.EmailField()
     mensaje = models.TextField()
     fecha_envio = models.DateTimeField(auto_now_add=True)
-    
+
+# Modelo Avatar
+class Avatar(models.Model):
+    #Guarda los avatares en una carpeta llamada "avatares"
+    imagen = models.ImageField (upload_to='avatares')
+    #Cuando se borra el usuario borra los avatares del usuario
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.user} {self.imagen}"

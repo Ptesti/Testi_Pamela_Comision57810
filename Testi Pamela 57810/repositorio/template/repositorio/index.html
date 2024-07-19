@@ -29,28 +29,32 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-13 py-3 py-lg-4" href="{% url 'home' %}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-1 py-3 py-lg-4" href="{% url 'home' %}">Inicio</a></li>
                         {% if user.is_authenticated %}
-                            <li class="nav-item"><a class="nav-link px-lg-13 py-3 py-lg-4" href="{% url 'mundoliterario' %}">Mundo Literario</a></li>
-                            <li class="nav-item"><a class="nav-link px-lg-13 py-3 py-lg-4" href="{% url 'materia' %}">Materias</a></li>
-                            <li class="nav-item"><a class="nav-link px-lg-13 py-3 py-lg-4" href="{% url 'profesor' %}">Docentes</a></li>
-                            <li class="nav-item"><a class="nav-link px-lg-13 py-3 py-lg-4" href="{% url 'alumno' %}">Alumnos</a></li>
-                            <li class="nav-item"><a class="nav-link px-lg-13 py-3 py-lg-4" href="{% url 'curso' %}">Cursos</a></li>
-                            <li class="nav-item"><a class="nav-link px-lg-13 py-3 py-lg-4" href="{% url 'acerca' %}">Acerca de mi</a></li>
-                            <li class="nav-item"><a class="nav-link px-lg-13 py-3 py-lg-4">[{{ user.first_name }} {{ user.last_name }}]</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-1 py-3 py-lg-4" href="{% url 'mundoliterario' %}">Mundo Literario</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-1 py-3 py-lg-4" href="{% url 'materia' %}">Materias</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-1 py-3 py-lg-4" href="{% url 'profesor' %}">Docentes</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-1 py-3 py-lg-4" href="{% url 'alumno' %}">Alumnos</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-1 py-3 py-lg-4" href="{% url 'curso' %}">Cursos</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-1 py-3 py-lg-4" href="{% url 'acerca' %}">Acerca de mi</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-1 py-3 py-lg-4">[{{ user.first_name }} {{ user.last_name }}]</a></li>
+                            <div class="text-center">
+                                <a href="{% url 'addAvatar' %}"><img src="{{ request.session.avatar }}" height="40px" weight="40px" alt="foto"></a>
+                            </div>
+                            <li class="nav-item"><a class="nav-link px-lg-1 py-3 py-lg-4" href="{% url 'perfil' %}">Editar usuario</a></li>
                             <li class="nav-item">
                                 <form method="post" action="{% url 'logout' %}">
                                     {% csrf_token %}
 
                                     <button type="submit" class="btn btn-white" style="color: white;">
-                                        Cerrar Sesión
+                                        CERRAR SESIÓN
                                     </button>
                                 </form>
                             </li>
                         {% else %}
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'login' %}">Iniciar Sesión</a></li>
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'registro' %}">Crear Usuario</a></li>
-                            <li class="nav-item"><a class="nav-link px-lg-13 py-3 py-lg-4" href="{% url 'contacto' %}">Contacto</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-1 py-3 py-lg-4" href="{% url 'login' %}">Iniciar Sesión</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-1 py-3 py-lg-4" href="{% url 'registro' %}">Crear Usuario</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-1 py-3 py-lg-4" href="{% url 'contacto' %}">Contacto</a></li>
                         {% endif %}
                     </ul>
                 </div>
@@ -89,7 +93,6 @@
                             <br>Calle: Juan Carlos Cobián 277
                             <br>Ministro Rivadavia
                             <!-- <br>Contáctanos: <a href="contact.html"> biblioteca.eesn81@gmail.com </a> puse asi pero me queda desalineado-->
-                            <br>Contáctanos: biblioteca.eesn81@gmail.com 
                             </p>
                         </div>
                     </div>

@@ -1,20 +1,15 @@
 {% extends 'repositorio/index.html' %}
 
 {% block titulo %}
-    <h1>Login</h1>
+    <h1>Avatar</h1>
 {% endblock titulo %}
 
 {% block contenido %}
-{% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-danger">{{ message }}</div>
-    {% endfor %}
-{% endif %}
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data"> <!-- Para avisar que no son solo datos de texto sino binario -->
     {% csrf_token %}
     <table class="table table-striped">
         {{ form.as_table }}    
     </table>
-    <input type="submit" value="Login">
+    <input type="submit" value="Actualizar Avatar">
 </form>
 {% endblock contenido %}

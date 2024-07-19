@@ -40,6 +40,13 @@ urlpatterns = [
     path('login/', loginRequest, name='login'),
     path('logout/', LogoutView.as_view(template_name='repositorio/logout.html'), name='logout'),
     path('registro/', registro, name='registro'),
+
+#______________ Editar Perfil y Avatar
+    path('perfil/', editarPerfil, name='perfil'),
+    path('<int:pk>/password/', EditarClave.as_view() , name='editarClave'),
+    path('addAvatar/', addAvatar, name='addAvatar'),
 ]
+
+
 
 # ____________________________________ Código que fue reemplazado ____________________________________ 
